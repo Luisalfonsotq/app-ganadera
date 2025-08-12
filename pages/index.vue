@@ -9,9 +9,12 @@
         <p class="text-lg md:text-xl mb-6">
           Administra fincas, controla potreros, registra eventos y optimiza la crianza de tu ganado.
         </p>
-        <NuxtLink to="/login" class="bg-white text-green-700 px-6 py-3 rounded-lg font-semibold hover:bg-green-100 transition">
+        <!-- <NuxtLink to="/login" class="bg-white text-green-700 px-6 py-3 rounded-lg font-semibold hover:bg-green-100 transition">
           Iniciar Sesión
-        </NuxtLink>
+        </NuxtLink> -->
+        <div class="prueba text-white p-4">
+          Botón azul primario
+        </div>
       </div>
     </section>
 
@@ -35,6 +38,8 @@
           <div class="bg-white p-6 rounded-lg shadow text-center">
             <h3 class="font-bold text-lg mb-2">Colaborador</h3>
             <p>Registra eventos y apoya las labores diarias de la finca.</p>
+          <button class="prueba">hola</button>
+
           </div>
         </div>
       </div>
@@ -68,9 +73,7 @@
     <!-- CTA Final -->
     <section class="bg-green-700 text-white py-12 text-center">
       <h2 class="text-3xl font-bold mb-4">Comienza a gestionar tu ganado hoy</h2>
-      <NuxtLink to="/register" class="bg-white text-green-700 px-6 py-3 rounded-lg font-semibold hover:bg-green-100 transition">
-        Crear cuenta
-      </NuxtLink>
+
     </section>
   </div>
 </template>
@@ -80,3 +83,10 @@ definePageMeta({
   layout: 'public'
 })
 </script>
+
+<style scoped>
+.prueba{
+  color: var(--primary-verde);
+  background-color: var(--primary-marron);
+}
+</style>

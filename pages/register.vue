@@ -35,6 +35,9 @@
 </template>
 
 <script setup>
+definePageMeta({
+  layout: 'public'
+})
 import { register } from '~/composables/useAuth.ts';
 
 const registerForm = reactive({
