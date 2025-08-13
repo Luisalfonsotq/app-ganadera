@@ -1,13 +1,17 @@
 <template>
   <div class="min-h-screen bg-gray-100 flex flex-col">
     <!-- Header -->
-    <header class="bg-blue-600 text-white py-4 shadow">
+    <header class="bg-white-600 py-4 shadow">
       <div class="container mx-auto px-4 flex justify-between items-center">
-        <h1 class="text-lg font-bold">App Ganadera</h1>
+        <NuxtLink to="/" class="hover:underline">HERDIX</NuxtLink>
+
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+          class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+        <!--  -->
         <nav class="flex gap-4">
-          <NuxtLink to="/" class="hover:underline">Inicio</NuxtLink>
-          <NuxtLink to="/login" class="hover:underline">Login</NuxtLink>
-          <NuxtLink to="/register" class="hover:underline">Registro</NuxtLink>
+          <NuxtLink to="/crear" class="hover:underline">+ Crear</NuxtLink>
         </nav>
       </div>
     </header>
@@ -18,8 +22,10 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-4 text-center">
+    <footer class="bg-green-800 text-white py-4 text-center">
       <p class="text-sm">© {{ new Date().getFullYear() }} App Ganadera. Todos los derechos reservados.</p>
     </footer>
   </div>
 </template>
+
+

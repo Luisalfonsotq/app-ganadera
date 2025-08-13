@@ -12,9 +12,9 @@
         <!-- <NuxtLink to="/login" class="bg-white text-green-700 px-6 py-3 rounded-lg font-semibold hover:bg-green-100 transition">
           Iniciar Sesión
         </NuxtLink> -->
-        <div class="prueba text-white p-4">
+        <!-- <div class="prueba text-white p-4">
           Botón azul primario
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -38,8 +38,6 @@
           <div class="bg-white p-6 rounded-lg shadow text-center">
             <h3 class="font-bold text-lg mb-2">Colaborador</h3>
             <p>Registra eventos y apoya las labores diarias de la finca.</p>
-          <button class="prueba">hola</button>
-
           </div>
         </div>
       </div>

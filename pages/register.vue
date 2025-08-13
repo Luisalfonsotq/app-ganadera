@@ -26,7 +26,7 @@
           </select>
         </div>
 
-        <button type="submit" style="width: 100%; padding: 0.5rem; background-color: #4f46e5; color: white; border-radius: 0.375rem; font-weight: bold; border: none; cursor: pointer;">
+        <button type="submit" style="width: 100%; padding: 0.5rem; background-color:green; color: white; border-radius: 0.375rem; font-weight: bold; border: none; cursor: pointer;">
           Registrarse
         </button>
       </form>
