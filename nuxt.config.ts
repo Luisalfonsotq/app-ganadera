@@ -1,17 +1,36 @@
 // nuxt.config.ts
+import { defineNuxtConfig } from 'nuxt/config'
+import Components from 'unplugin-vue-components/vite'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+
+
 export default defineNuxtConfig({
+  
+
+   vite: {
+    plugins: [
+      Components({
+        resolvers: [
+          IconsResolver({
+            prefix: 'i', // <i-heroicons-cow /> por ejemplo
+          }),
+        ],
+      }),
+      Icons({
+        autoInstall: true, // instala packs automáticamente
+      }),
+    ],
+  },
 
   css: ['@/assets/css/main.css'],
 
-  // Elimina 'tailwindcss' y 'autoprefixer' de aquí.
-  // El módulo de Tailwind ya se encarga de ellos.
   postcss: {
     plugins: {
       'postcss-nested': {},
     },
   },
 
-  // Mantén el módulo de Tailwind, que es la forma correcta.
   modules: ['@nuxtjs/tailwindcss'],
 
   compatibilityDate: '2025-07-15',

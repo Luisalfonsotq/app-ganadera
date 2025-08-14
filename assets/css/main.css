@@ -1,22 +1,14 @@
-/* @import "tailwindcss/preflight";
-@import "tailwindcss/utilities"; */
 
 /* Aquí tus estilos personalizados */
-:root {
+/* :root {
   --primary-verde: #509628;
   --primary-marron: #785028;
+  --primary-blanco: #FFFFFF;
   --secondary-celeste:  #468CC8;
   --secondry-amarillo:#F0BE3C;
   --terciario-gris: #B4B4B4;
   --terciario-blanco: #F5F5F0;
   
-}
+} */
 
-/* Colores terciarios
-•	Gris Piedra: Un color neutral y moderno que proporciona contraste y orden. Es ideal para texto secundario, bordes o elementos de apoyo.
-o	RGB: (180, 180, 180)
-o	Hex: #B4B4B4
-•	Blanco Vaca: Un blanco roto que ofrece un lienzo limpio y minimalista, evitando la rigidez de un blanco puro.
-o	RGB: (245, 245, 240)
 
- */
