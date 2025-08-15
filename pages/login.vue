@@ -1,59 +1,42 @@
-<script setup lang="ts">
-definePageMeta({
-  layout: 'public'
-})
-
-import { ref } from 'vue'
-
-const email = ref('')
-const password = ref('')
-
-function handleLogin() {
-  // Aquí luego conectarás con tu API NestJS
-  console.log('Iniciar sesión con', email.value, password.value)
-}
-</script>
-
 <template>
-  <div class="flex justify-center items-center min-h-[80vh] bg-gray-50">
-    <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
-      <h1 class="text-2xl font-bold text-green-700 text-center mb-6">Iniciar Sesión</h1>
-
-      <form @submit.prevent="handleLogin" class="space-y-4">
-        <div>
-          <label class="block text-sm font-medium mb-1">Correo electrónico</label>
-          <input
-            v-model="email"
-            type="email"
-            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-green-500"
-            placeholder="tucorreo@ejemplo.com"
-            required
-          />
-        </div>
-
-        <div>
-          <label class="block text-sm font-medium mb-1">Contraseña</label>
-          <input
-            v-model="password"
-            type="password"
-            class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring focus:border-green-500"
-            placeholder="********"
-            required
-          />
-        </div>
-
-        <button
-          type="submit"
-          class="w-full bg-green-700 text-white py-2 rounded hover:bg-green-800 transition"
-        >
-          Ingresar
-        </button>
-      </form>
-
-      <p class="text-sm text-center mt-4">
-        ¿No tienes cuenta?
-        <NuxtLink to="/register" class="text-green-700 hover:underline">Regístrate aquí</NuxtLink>
-      </p>
-    </div>
+  <div class="max-w-md mx-auto mt-10 p-6 border rounded">
+    <h1 class="text-xl font-bold mb-4">Iniciar Sesión</h1>
+    <form @submit.prevent="login">
+      <input v-model="email" type="email" placeholder="Email" class="border p-2 w-full mb-2" />
+      <input v-model="password" type="password" placeholder="Contraseña" class="border p-2 w-full mb-4" />
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Entrar</button>
+    </form>
+    <p v-if="error" class="text-red-500 mt-2">{{ error }}</p>
   </div>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const email = ref('');
+const password = ref('');
+const error = ref('');
+const router = useRouter();
+
+async function login() {
+  error.value = '';
+  try {
+    const res = await fetch('http://localhost:3001/auth/login', { // ⚠️ URL ajustada a 3001
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: email.value, password: password.value })
+    });
+
+    if (!res.ok) {
+      throw new Error('Credenciales inválidas');
+    }
+
+    // Ya no necesitas manejar la respuesta, la cookie se establece automáticamente
+    // Solo verifica que la respuesta fue exitosa y redirige
+    router.push('/admin');
+  } catch (err) {
+    error.value = 'Credenciales incorrectas';
+  }
+}
+</script>

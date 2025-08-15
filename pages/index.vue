@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Hero -->
-    <section class="bg-green-700 text-white py-20">
+    <section class="  border-b-blue-600 border-l-violet-600 border-r-pink-500 border-t-purple-400  bg-gradient-to-r from-blue-500 to-secondary-amarillo  text-white py-20 backdrop-blur-md bg-opacity-30">
       <div class="max-w-6xl mx-auto text-center px-6">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">
           Gestión Inteligente de Ganado Bovino
@@ -9,12 +9,6 @@
         <p class="text-lg md:text-xl mb-6">
           Administra fincas, controla potreros, registra eventos y optimiza la crianza de tu ganado.
         </p>
-        <!-- <NuxtLink to="/login" class="bg-white text-green-700 px-6 py-3 rounded-lg font-semibold hover:bg-green-100 transition">
-          Iniciar Sesión
-        </NuxtLink> -->
-        <!-- <div class="prueba text-white p-4">
-          Botón azul primario
-        </div> -->
       </div>
     </section>
 
@@ -69,7 +63,7 @@
     </section>
 
     <!-- CTA Final -->
-    <section class="bg-green-700 text-white py-12 text-center">
+    <section class="bg-gradient-to-r from-blue-500 to-purple-500  text-white py-12 text-center">
       <h2 class="text-3xl font-bold mb-4">Comienza a gestionar tu ganado hoy</h2>
 
     </section>
@@ -81,10 +75,3 @@ definePageMeta({
   layout: 'public'
 })
 </script>
-
-<style scoped>
-.prueba{
-  color: var(--primary-verde);
-  background-color: var(--primary-marron);
-}
-</style>

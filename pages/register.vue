@@ -50,7 +50,7 @@ const registerForm = reactive({
 const handleRegister = async () => {
   try {
     await register(registerForm);
-    navigateTo('/dashboard');
+    navigateTo('/admin');
   } catch (error) {
     alert(error.message);
   }

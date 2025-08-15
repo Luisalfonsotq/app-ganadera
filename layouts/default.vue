@@ -1,8 +1,8 @@
 <template>
-  <div class="min-h-screen bg-terciario-gris flex flex-col">
+  <div class="flex min-h-screen bg-terciario-gris flex-col">
     <!-- Header -->
-    <header class="bg-primary-blanco py-4 shadow">
-      <div class="container mx-auto px-4 flex  items-center">
+    <header class="bg-primary-blanco py-4 shadow-md">
+      <div class="container mx-auto px-4 flex  items-center gap-2">
         <!-- Tabler Icons: menú -->
         <i-tabler-menu-2 class="w-8 h-8 text-purple-600" />
         <NuxtLink to="/" class="text-primary-verde hover:text-red-500"> 
@@ -24,13 +24,8 @@
 
     <!-- Footer -->
     <footer class="bg-primary-verde text-white py-4 text-center">
-      <p class="text-sm">© {{ new Date().getFullYear() }} App Ganadera. Todos los derechos reservados.</p>
+      <p class="text-sm">© {{ new Date().getFullYear() }} Herdix. Todos los derechos reservados.</p>
     </footer>
   </div>
 </template>
 
-<style>
-.cabecera {
-  background-color: var(--primary-blanco);
-}
-</style>
