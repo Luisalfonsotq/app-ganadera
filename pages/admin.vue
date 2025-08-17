@@ -1,7 +1,15 @@
 <template>
   <div class="max-w-lg mx-auto mt-10">
     <h1 class="text-2xl font-bold mb-4">Perfil del Usuario</h1>
-    <div v-if="usuario">
+    <div v-if="pending">
+      <p>Cargando el perfil...</p>
+    </div>
+
+    <div v-else-if="error">
+      <p>Error al cargar el perfil. Por favor, intente de nuevo</p>
+    </div>
+
+    <div v-else-if="usuario">
       <p><strong>Nombre:</strong> {{ usuario.nombre }}</p>
       <p><strong>Email:</strong> {{ usuario.email }}</p>
       <p><strong>Rol:</strong> {{ usuario.rol }}</p>
@@ -13,25 +21,13 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref} from 'vue';
+import { useApi } from '~/composables/useApi';
 
 const usuario = ref(null);
+const {data, pending, error} = await useApi('/auth/profile');
 
-onMounted(async () => {
-  try {
-    // Hace una petición al endpoint protegido para obtener los datos del perfil
-    const res = await fetch('http://localhost:3001/auth/profile');
-    
-    if (!res.ok) {
-      // Si la petición falla (ej. 401 Unauthorized), el usuario no está autenticado
-      throw new Error('No autorizado');
-    }
-
-    const data = await res.json();
-    usuario.value = data;
-  } catch (err) {
-    console.error(err);
-    // Podrías redirigir al login si falla
-  }
-});
+if(data.value){
+  usuario.value = data.value;
+}
 </script>
