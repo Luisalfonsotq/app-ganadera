@@ -4,7 +4,7 @@ import type { UseFetchOptions } from 'nuxt/app';
 
 export function useApi<T>(url: string | (() => string), opts: UseFetchOptions<T> = {}) {
   const defaults: UseFetchOptions<T> = {
-    baseURL: 'http://localhost:3001', // URL de tu backend en NestJS
+    baseURL: 'http://localhost:3001', // URL del backend en NestJS
     credentials: 'include', // La clave para enviar la cookie
   };
 
